@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-buttons>
+      <button ion-button (click)="viewCtrl.dismiss(false)">
+        Cerrar
+      </button>
+    </ion-buttons>
+
+    <ion-title>Ingresar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="contenido">
+
+  <ion-card class="card">
+    <ion-card-header>
+      Inicia Sesion
+    </ion-card-header>
+    <ion-card-content>
+
+
+      <ion-list no-line>
+
+        <ion-item>
+          
+          <ion-input placeholder="correo" type="email" [(ngModel)]="correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input placeholder="contraseña" type="password" [(ngModel)]="contrasena"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <button ion-button [disabled]=" correo.length < 5 || contrasena.length < 5 " block (click)="ingresar()">
+        Ingresar
+      </button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
