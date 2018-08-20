@@ -13,7 +13,7 @@ import { ProductoPage } from "../index.paginas";
 export class Busqueda {
 
   productoPage = ProductoPage;
-  buscar: string = "";
+  keyword: string = "";
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -21,6 +21,6 @@ export class Busqueda {
   }
 
   buscar_productos(ev: any){
-    this._ps.buscar_producto(this.buscar); 
+    this._ps.buscar_producto(this.keyword); 
   }
 }

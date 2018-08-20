@@ -7,7 +7,7 @@
 
 
 <ion-content>
-    <ion-searchbar (ionInput)="buscar_productos($event)" [(ngModel)]="buscar"></ion-searchbar>
+    <ion-searchbar (ionInput)="buscar_productos($event)" [(ngModel)]="keyword"></ion-searchbar>
     <ion-list>
         <ion-item *ngFor="let item of _ps.resultados" [navPush]="productoPage" [navParams]="{ producto: item }">
             {{ item.producto }}
