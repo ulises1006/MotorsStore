@@ -23,12 +23,7 @@ export class HomePage {
 
   }
 
-
   siguiente_pagina( infiniteScroll ){
-    for (var i = 0; i < 55; i++) {
-      this._ps.cargar_todos(); 
-    }
-    
+      this._ps.cargar_todos();         
   }
-
 }

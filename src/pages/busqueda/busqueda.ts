@@ -22,5 +22,5 @@ export class Busqueda {
 
   buscar_productos(ev: any){
     this._ps.buscar_producto(this.keyword); 
-  }
+  } 
 }

@@ -31,7 +31,7 @@ export class OrdenesDetallePage {
           buttons: ["OK"]
         }).present();
       }
-      else{
+      else{ 
         this.navCtrl.pop();
         this.alertCtrl.create({
           title: "Orden borrada",

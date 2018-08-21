@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 import { URL_SERVICIOS } from "../config/url.servicios";
 
-import { AlertController, Platform } from "ionic-angular";
+import { AlertController, Platform, ToastController } from "ionic-angular";
 
 // Plugin storage
 import { Storage } from '@ionic/storage';
@@ -20,7 +20,8 @@ export class UsuarioService {
   constructor(public http: Http,
     private alertCtrl: AlertController,
     private platform: Platform,
-    private storage: Storage) {
+    private storage: Storage,
+    private toastCtrl: ToastController) {
 
     console.log('Hello Usuario Provider');
     this.cargar_storage();
@@ -63,19 +64,25 @@ export class UsuarioService {
           this.token = data_resp.token;
           console.log(data_resp.token);
           this.id_usuario = data_resp.id_usuario;
-
+          
+          this.presentToast("Acceso correcto: ");
           // Guardar Storage
           this.guardar_storage();
-          this.alertCtrl.create({
-            title: "Acceso correcto",
-            subTitle: data_resp.mensaje,
-            buttons: ["OK"]
-          }).present();
+          
 
         }
 
       });
 
+  }
+
+  presentToast(message) {
+    let toast = this.toastCtrl.create({
+      message: ''+message ,
+      duration: 3000,
+      position: 'middle'
+    });
+    toast.present();
   }
 
   cerrar_sesion() {

@@ -20,6 +20,6 @@ export class OrdenesPage {
   }
 
   ionViewWillEnter() {
-    this._cs.cargar_ordenes(); 
+    this._cs.cargar_ordenes();  
   }
 }
