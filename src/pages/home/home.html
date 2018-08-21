@@ -4,7 +4,7 @@
     <ion-navbar color="primary">
 
         <ion-buttons start>
-            <button ion-button (click)="_us.cerrar_sesion()">
+            <button ion-button  *ngIf="_us.activo()" (click)="_us.cerrar_sesion()">
         Salir
       </button>
         </ion-buttons>
